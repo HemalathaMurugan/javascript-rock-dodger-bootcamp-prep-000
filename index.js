@@ -86,7 +86,7 @@ function endGame() {
   var i= ROCKS.length;
   while(i > 0){
     GAME.removeChild(ROCKS[0]);
-    ROCKS.shift();
+    //ROCKS.shift();
     i++;
   }
 
