@@ -83,17 +83,16 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  var i= ROCKS.length;
-  while(i > 0){
-    GAME.removeChild(ROCKS[i]);
+  while(ROCKS.length > 0){
+    GAME.removeChild(ROCKS[0]);
     ROCKS.shift();
-    i++;
   }
 
   clearInterval(gameInterval);
   window.removeEventListener('keydown', moveDodger);
   alert("YOU LOSE!");
-  
+  START.innerHTML = 'Play again?'
+  START.style.display = 'inline'
 }
 
 function moveDodger(e) {
