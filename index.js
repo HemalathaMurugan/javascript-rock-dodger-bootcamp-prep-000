@@ -85,8 +85,8 @@ function createRock(x) {
 function endGame() {
   var i= ROCKS.length;
   while(i > 0){
-    GAME.removeChild(ROCKS[0]);
-    //ROCKS.shift();
+    GAME.removeChild(ROCKS[i]);
+    ROCKS.shift();
     i++;
   }
 
