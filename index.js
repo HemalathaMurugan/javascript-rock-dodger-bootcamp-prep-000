@@ -83,9 +83,11 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  while(ROCKS.length > 0){
+  var i= ROCKS.length;
+  while(i > 0){
     GAME.removeChild(ROCKS[0]);
     ROCKS.shift();
+    i++;
   }
 
   clearInterval(gameInterval);
