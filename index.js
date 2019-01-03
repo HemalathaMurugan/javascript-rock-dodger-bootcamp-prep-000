@@ -23,10 +23,10 @@ function checkCollision(rock) {
  
   if (top > 360) {
   const dodgerLeftEdge = positionToInteger(DODGER.style.left);
-               // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge? //---or could be (dodgerLeftEdge+40)
+               
   const dodgerRightEdge = dodgerLeftEdge+40;
   const rockLeftEdge = positionToInteger(rock.style.left)
-                      // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?//----or could be (rockLeftEdge+20)
+                      
   const rockRightEdge = rockLeftEdge+20;
 
     if (((rockLeftEdge<=dodgerRightEdge) && (rockRightEdge>=dodgerRightEdge))||
@@ -51,9 +51,7 @@ function createRock(x) {
   // Hmmm, why would we have used `var` here?-Because as the rock moves downwards,top value will be dynamic- changing
   var top = 0;
   rock.style.top = top;
-  //document.body.appendChild(rock);--this way, the tests passed and I could submit the lab.But rocks are falling outside the game box.
-  //which is not the expected result.So some loop hole might there in the index-test.js --in the appending some checking to be included
-  //So now am gonna append rock with the game.
+  
   GAME.appendChild(rock);
       
       const check = checkCollision(rock);
